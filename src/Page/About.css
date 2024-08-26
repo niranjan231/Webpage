@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.about-img{
+    width: 500px;
+    height: 600px;
+    margin:100px;
+}
+h1{
+    color: black;
+}
