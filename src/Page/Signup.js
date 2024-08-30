@@ -24,11 +24,26 @@ function Signup(){
 
     }
 
-    
+    function clearState(){
+        setMessage("");
+    }
 
     function onSignIn(e){
         e.preventDefault();
-        console.log(userId,password);
+        clearState();
+        // console.log(userId,password);
+        if(userId.length<5){
+            setError(true);
+            setMessage("Less then 5 chrectare userId");
+            return;
+        }
+        if(password.length<5){
+            setError(true);
+            setMessage("Less then 5 chrectare pasword");
+            return;
+        }
+        setMessage("login Sucesful")
+        setError(false);
     }
 
     return <div className="bg-info d-flex justify-content-center align-items-center vh-100" >
@@ -53,9 +68,7 @@ function Signup(){
                     <input  className="btn btn-info text-white form-control m-1" type="submit" value="Sign In" />
                     </div>
             </form>
-
-            <div className={(error)?"text-danger":"text-success"} > {message} </div>
-
+            <div className={(error) ? "text-danger":"text-success" } >{message}</div>
         </div>
        </div>
 
